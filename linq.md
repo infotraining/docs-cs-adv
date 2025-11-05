@@ -173,6 +173,7 @@ int firstEvenElement = numbers.First(n => n % 2 == 0); // 6
 ```
 
 `FirstOrDefault`, `LastOrDefault`, `SingleOrDefault`, `ElementOrDefault` zwracają element albo wartość domyślną (dla typu referencyjnego `null`).
+
 ### Partycjonowanie danych
 
 Partycjonowanie w LINQ polega na podziale sekwencji na dwie części, bez reorganizacji elementów, i zwróceniu jednej z tych części.
@@ -326,6 +327,7 @@ Opóźnione wykonanie dotyczy wszystkich operatorów standardowych z wyjątkiem:
 * operatorów konwersji: `ToArray`, `ToList`, `ToDictionary`, `ToLookup`
 
 Opóźnione wykonanie powoduje, że zapytanie jest ponownie ewaluowane przy kolejnej enumeracji.
+
 ### Operatory konwersji
 
 Operatory konwersji  `ToArray`, `ToList`, `ToDictionary`, `ToLookup` umożliwiają buforowanie wyników operacji z konkretnego momentu w czasie oraz uniknięcie ponownego wykonania zasobożernego zapytania lub zapytania odwołującego się do zewnętrznych źródeł danych.
