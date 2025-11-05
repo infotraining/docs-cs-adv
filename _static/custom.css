@@ -1,144 +1,209 @@
-@import url("https://fonts.googleapis.com/css?family=Fira+Sans+Extra+Condensed:300,300i,400,400i,500,500i,600,600i|Fira+Sans:400,400i,500,600,600i,700,700i|Roboto+Condensed:400,400i,700,700i&subset=latin-ext");
+/* Custom CSS for Jupyter Book - Fira Sans Font */
 
-/* .bd-main
-{
-  min-width: 1250px;
+/* Import Fira Sans font from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Mono:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@400;500;600;700&display=swap');
+
+
+/* Apply Fira Sans to body and main text elements */
+/* body,
+.main-content,
+article,
+p,
+li,
+td,
+th,
+span,
+div {
+    font-family: 'Fira Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
 } */
 
-html[data-theme="dark"] {
-  --pst-color-inline-code: #abe338;
-  --my-color-definition-background: var(--bs-gray-800);
-  --my-color-definition-border-bottom: var(--bs-gray-700);
-}
-
-html[data-theme="light"] {
-  --pst-color-inline-code: #007020;
-  --my-color-definition-background: var(--bs-gray-100);
-  --my-color-definition-border-bottom: var(--bs-gray-200);
-}
-
 body {
-  font-family: "Fira Sans", "Open Sans", sans-serif;
+    font-family: 'Merriweather' !important;
 }
 
-p {
-  font-size: 1.1em !important;
+/* Headings with Fira Sans */
+h1, h2, h3, h4, h5, h6,
+.header,
+.title {
+    font-family: 'Roboto Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif !important;
+    font-weight: 600;
 }
 
-ol li > p + ul.simple
-{
-  margin-top: 0.4rem !important;
-}
-
-p + ul.simple
-{
-  margin-top: -1rem !important;
-}
-
-img {
-  margin-top: 2em;
-  margin-bottom: 2em;
-}
-
-main.bd-content #main-content h1,
-main.bd-content #main-content h2,
-main.bd-content #main-content h3,
-main.bd-content #main-content h4,
-main.bd-content #main-content h5 {
-  color: rgb(0, 0, 0);
-  margin-top: 20px;
-}
-
-.bd-content div.cell_input,
-.bd-content div.output {
-  border-radius: 0rem !important;
-}
-
-code.literal {
-  background-color: white !important;
-  border: 0px;
-  padding: 0.1rem 0.25rem;
-}
-
-.header-style,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Roboto Condensed", "Open Sans", sans-serif;
-  font-weight: 500;
-  padding-bottom: 5px !important;
-  border-bottom: 1px solid #dee2e6;
-}
-
-div.navbar-brand-box a.navbar-brand img.logo {
-  margin-bottom: 25px !important;
-}
-
-.card {
-  border-radius: 0%;
-}
-
-tt,
+/* Code blocks with Fira Code or Fira Mono */
 code,
+pre,
+.highlight,
+.code-block,
 kbd,
 samp,
+tt {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'Consolas', 'Monaco', monospace !important;
+}
+
+code, kbd, pre, samp {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'Consolas', 'Monaco', monospace !important;
+    font-weight: 500 !important;
+    font-size: 1em !important;
+}
+
+/* Inline code */
+code:not([class*="language-"]) {
+    font-family: 'JetBrains Mono', 'Fira Code', 'Fira Mono', 'Consolas', monospace !important;
+    font-size: 0.95em !important;
+    padding: 0.1em 0.4em;
+    background-color: rgba(27, 31, 35, 0.05);
+    border-radius: 3px;
+}
+
+/* Improve readability */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Headings sizing */
+h1 {
+    font-size: 2.5em !important;
+    font-weight: 700;
+    /* margin-top: 1em;
+    margin-bottom: 0.4em; */
+}
+
+h2 {
+    font-size: 2.2em !important;
+    font-weight: 600;
+    margin-top: 1.2em !important;
+    margin-bottom: 0.5em !important;
+}
+
+h3 {
+    font-size: 2em !important;
+    font-weight: 600;
+    margin-top: 1em !important;
+    margin-bottom: 0.4em !important;
+}
+
+h4 {
+    font-size: 1.75em !important;
+    font-weight: 600;
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+}
+
+.article p img {
+    margin-top: 20px !important;
+    margin-bottom: 5px !important;
+}
+
+/* Better spacing for paragraphs */
+p {
+    margin-bottom: 1em;
+}
+
+/* Code block styling */
 pre {
-  font-family: "Cascadia Mono", var(--pst-font-family-monospace) !important;
-  font-size: 95% !important;
-  border-radius: 0px !important;
+    /* padding: 1em;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-size: 0.9em;
+    line-height: 1.5; */
 }
 
-code.literal {
-  border-radius: 0px !important;
-  background-color: var(--pst-color-surface) 0 !important;
-  padding: 0.1rem 0.25rem;
+/* Lists */
+ul, ol {
+    /* margin-bottom: 1em;
+    padding-left: 2em; */
 }
 
-code {
-  color: var(--pst-color-inline-code) !important;
-  font-size: 95% !important;
+li {
+    /* margin-bottom: 0.5em; */
 }
 
-.admonition,
-div.admonition {
-  border-radius: 0px !important;
+/* Tables */
+
+/* table {
+    font-size: 0.95em;
+    border-collapse: collapse;
+    width: 100%;
+    margin: 1em 0;
 }
 
-dt {
-  font-weight: 700;
-  font-size: 1.2em !important;
-  background-color: var(--my-color-definition-background);
-  border-bottom-color: var(--my-color-definition-border-bottom);
-  border-bottom-style: solid;
-  border-bottom-width: 1.2;
+th, td {
+    padding: 0.75em;
+    text-align: left;
+    border: 1px solid #ddd;
 }
 
-.h1 h1 {
-  font-size: 2rem !important;
+th {
+    background-color: #f8f9fa;
+    font-weight: 600;
+} */
+
+/* Links */
+/* a {
+    color: #0066cc;
+    text-decoration: none;
 }
 
-.h2 h2 {
-  font-size: 1.6rem !important;
+a:hover {
+    text-decoration: underline;
+} */
+
+/* Blockquotes */
+/* blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 1em;
+    margin-left: 0;
+    font-style: italic;
+    color: #555;
+} */
+
+/* Images */
+/* img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1em auto;
+} */
+
+/* Admonitions/Notes */
+/* .admonition {
+    padding: 1em;
+    margin: 1em 0;
+    border-left: 4px solid #0066cc;
+    background-color: #f8f9fa;
+    border-radius: 4px;
 }
 
-.h3 h3 {
-  font-size: 1.4rem !important;
+.admonition-title {
+    font-weight: 600;
+    margin-bottom: 0.5em;
+} */
+
+/* Sidebar */
+.sidebar {
+    font-family: 'Fira Sans', sans-serif !important;
 }
 
-.h4 h4 {
-  font-size: 1.2rem !important;
+.sidebar-tree {
+    font-family: 'Fira Sans', sans-serif !important;
 }
 
-@media print {
-  .skip-link {
-    display: none !important;
-    position: absolute;
-  }
+/* Navigation */
+nav {
+    font-family: 'Fira Sans', sans-serif !important;
 }
 
-.table tbody tr:hover {
-  background-color: #ababab33 !important;
+/* Footer */
+footer {
+    font-family: 'Fira Sans', sans-serif !important;
+    font-size: 0.9em;
+}
+
+.bg-stone-200\/10 {
+    background-color: #6b6b6f1a !important;
 }

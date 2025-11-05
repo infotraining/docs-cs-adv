@@ -1,3 +1,11 @@
-# Szkolenie
+# Zaawansowane programowanie w .NET Framework 4.5
 
-Materiały do szkolenia [Test-Driven Development w C++](https://www.infotraining.pl/szkolenie/c-plus-plus/tdd)
+Ten kurs obejmuje następujące tematy:
+
+- **LINQ** - Language INtegrated Query
+- **Programowanie współbieżne** - Wątki i synchronizacja
+- **Parallel Extensions** - TPL i PLINQ
+- **Refleksje** - Przeglądanie metadanych w czasie wykonywania
+- **Entity Framework** - ORM dla .NET
+- **Bezpieczeństwo** - Security w .NET Framework
+- **Globalizacja** - Internacjonalizacja aplikacji

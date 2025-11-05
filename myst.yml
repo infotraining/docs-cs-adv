@@ -1,0 +1,38 @@
+version: 1
+project:
+  title: Zaawansowane programowanie w .NET Framework 4.5
+  copyright: '2025'
+  github: your-repo
+  exports:
+    - format: pdf
+      template: plain_latex_book
+      output: exports/book.pdf
+  toc:
+    - file: index.md
+    - file: linq.md
+    - file: threads.md
+    - file: parallel-extensions.md
+    - file: reflection.md
+    - file: entity.md
+    - file: security.md
+    - file: globalization.md
+site:
+  options:
+    logo: 'logo.png'
+    logo_text: Zaawansowane programowanie w .NET Framework 4.5
+    folders: true
+    style: _static/custom.css
+  template: book-theme
+  nav: []
+  actions:
+    - title: Custom CSS
+      static: true
+sphinx:
+  extra_extensions:
+    - sphinx_design
+  config:
+    html_static_path:
+      - _static
+    html_css_files:
+      - custom.css
+    language: pl
