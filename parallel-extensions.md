@@ -10,6 +10,7 @@ Biblioteka składa się z następujących elementów:
 Główną koncepcją Parallel Extensions jest zadanie (`Task`), które jest małą jednostką kodu, przeważnie instrukcją lambda, która może być uruchamiana niezależnie od pozostałych fragmentów kodu. Zarówno PLINQ, jak i TPL dostarczają metody służące do tworzenia zadań, przy czym PLINQ oferuje mniej skomplikowany i wymagający model zadaniowy. 
 Parallel Extensions zawiera tzw. **Task Manager**, który porządkuje zadania do wykonania (globalna kolejka zadań). Dodatkowo, Task Manager zarządza relacjami typu  zadanie – wątek. Jedno zadanie może być rozbite na kilka wątków lub jeden wątek może obsługiwać wiele zadań, a dzieje się to poza kontrolą programisty. 
 Domyślny model zachowania systemu porządkowania zadań kreuje tyle wątków, ile jest procesorów lub rdzeni procesora na komputerze, na którym aplikacja jest uruchomiona. Każdy wątek jest powiązany z osobną kolejką zadań, a dodatkowo, kiedy przechodzi w stan jałowy (*idle*) pobiera pakiet zadań czekających na realizację, przenosi go do lokalnej kolejki i na koniec wykonuje po jednym zadaniu z tej kolejki. System został zoptymalizowany w ten sposób, aby nie doprowadzić do sytuacji, kiedy jeden wątek wykona całą pracę i będzie bezczynnie oczekiwać na zakończenie pracy pozostałych wątków. Wątek, który został przetworzył wszystkie żądania, będzie sprawdzał kolejkę pozostałych wątków i w razie potrzeby pobierał  z niej zadania, które najdłużej oczekują na wykonanie (*task stealing*). 
+
 ## PLINQ
 
 LINQ szeroko wykorzystywany w .NET 4.5 do manipulowania kolekcjami obiektów został wzbogacony o możliwość wykonywania tych samych operacji współbieżnie. W praktyce oznacza to, że każda iteracyjna operacja wykonana na kolekcji za pomocą PLINQ zostaje opakowana w zestaw zadań wykonywanych współbieżnie.Przy czym operacja jako całość zostanie ukończona pod warunkiem, że ukończone zostaną wszystkie jej zadania. 
@@ -89,6 +90,7 @@ Press enter to finish
 
 PLINQ został wyposażony w mechanizm opóźnionego wykonania zapytania (*Deferred Query Execution*), dokładnie tak samo, jak standardowy LINQ. Oznacza to, że konfiguracja zapytania nie pociąga za sobą konieczności jego wykonania po każdej zmianie, tylko w momencie, kiedy zostanie zgłoszone żądanie dostępu do danych.
 Jeżeli istnieje potrzeba natychmiastowego wykonania zapytania, to wystarczy w danym miejscu dokonać konwersji zapytania PLINQ na dowolną standardową kolekcję. Do tego celu służą metody, takie jak : `ToList()`, `ToArray()`, `ToDictionary()`.
+
 ### Ograniczenia PLINQ
 
 Niżej wymienione operatory zapobiegają zrównolegleniu zapytania PLINQ w sytuacji, gdy zmienia się indeks elementu w porównaniu do jego oryginalnej wartości w kolekcji źródłowej. 
