@@ -2,7 +2,7 @@ version: 1
 project:
   title: Zaawansowane programowanie w .NET Framework 4.5
   copyright: '2025'
-  github: your-repo
+  github: https://github.com/infotraining/docs-cs-adv
   exports:
     - format: pdf
       template: plain_latex_book
@@ -23,16 +23,5 @@ site:
     folders: true
     style: _static/custom.css
   template: book-theme
-  nav: []
-  actions:
-    - title: Custom CSS
-      static: true
-sphinx:
-  extra_extensions:
-    - sphinx_design
-  config:
-    html_static_path:
-      - _static
-    html_css_files:
-      - custom.css
-    language: pl
+
+
