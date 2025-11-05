@@ -15,6 +15,7 @@ Zapytanie LINQ jest wyrażeniem, które umożliwia transformację sekwencji za p
 Wyrażenia LINQ mogą być tworzone na dwa sposoby:
 1.  Przy pomocy składni zapytań LINQ
 2.  Przy pomocy operatorów zapytania i wyrażeń lambda
+
 #### Proste zapytanie LINQ
 
 Kolekcja źródłowa:
@@ -55,6 +56,7 @@ Podstawowe operatory zapytania:
 * operatory konwersji: 
 
 Operatory zapytania często przyjmują jako parametry obiekty typu `Func<TSource, TResult>` (najczęściej wyrażenia lambda).
+
 ### Operatory filtrujące
 
 Operator `Where` umożliwia filtrowanie sekwencji wejściowej.
@@ -91,7 +93,8 @@ IEnumerable<string> q1 = fruits.OfType<string>();
 ```
 
 ### Operator projekcji
-#### Operator ``Select``
+
+#### Operator Select
 
 Fundamentalnym operatorem zapytania jest metoda `Select`, która przekształca (dokonuje projekcji) każdy element sekwencji wejściowej, za pomocą podanego wyrażenia lambda.
 
@@ -134,7 +137,7 @@ IEnumerable<string> indexedNames = names.Select((name, i) => string.Format("[{0}
 
 ```
 
-#### Operator ``SelectMany``
+#### Operator SelectMany
 
 `SelectMany` umożliwia spłaszczenie danych.
 Wyrażenie lambda przekazane jako argument musi zwracać jako wynik `IEnumerable`. W rezultacie każdy obiekt sekwencji wejściowej jest transformowany przez funkcję zwracającą sekwencję. Końcowy rezultat jest konkatenację wielu sekwencji do jednej sekwencji wynikowej.
